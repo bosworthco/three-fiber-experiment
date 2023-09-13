@@ -1,6 +1,6 @@
 import { Vector3 } from 'three'
 import { Canvas } from '@react-three/fiber'
-import World from '@/components/World'
+import { World } from '@/components'
 
 function App() {
   const camera = {

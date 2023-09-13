@@ -8,6 +8,8 @@ import { useAnimations, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { AnimationClip, SkinnedMesh, Bone, MeshStandardMaterial, Group } from 'three'
 
+import type { CharacterProps } from '../types'
+
 type ActionName =
   | 'Death'
   | 'Duck'
@@ -49,7 +51,7 @@ type GLTFResult = GLTF & {
   animations: GLTFActions[]
 }
 
-export function Bunny(props: JSX.IntrinsicElements['group']) {
+function Bunny(props: CharacterProps) {
   const group = useRef<Group>(null!)
   const { nodes, materials, animations } = useGLTF('characters/bunny.gltf') as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
@@ -116,3 +118,5 @@ export function Bunny(props: JSX.IntrinsicElements['group']) {
 }
 
 useGLTF.preload('characters/bunny.gltf')
+
+export default Bunny

@@ -8,6 +8,8 @@ import { useAnimations, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { AnimationClip, SkinnedMesh, Bone, MeshStandardMaterial, Group } from 'three'
 
+import type { CharacterProps } from '../types'
+
 type ActionName =
   | 'Death'
   | 'Fast_Flying'
@@ -39,7 +41,7 @@ type GLTFResult = GLTF & {
   animations: GLTFActions[]
 }
 
-export function Pigeon(props: JSX.IntrinsicElements['group']) {
+function Pigeon(props: CharacterProps) {
   const group = useRef<Group>(null!)
   const { nodes, materials, animations } = useGLTF('characters/pigeon.gltf') as GLTFResult
   const { actions } = useAnimations(animations, group)
@@ -93,3 +95,5 @@ export function Pigeon(props: JSX.IntrinsicElements['group']) {
 }
 
 useGLTF.preload('characters/pigeon.gltf')
+
+export default Pigeon
