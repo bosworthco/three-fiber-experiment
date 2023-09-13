@@ -41,10 +41,10 @@ const Scene: React.FC<SceneProps> = () => {
           />
         </motion.mesh>
 
-        <motion.mesh position-y={-1.5} rotation-x={-Math.PI * 0.5} receiveShadow>
+        <mesh position-y={-1.5} rotation-x={-Math.PI * 0.5} receiveShadow>
           <boxGeometry args={[5, 5, 0.1]} />
-          <motion.meshStandardMaterial />
-        </motion.mesh>
+          <meshStandardMaterial />
+        </mesh>
       </motion.group>
     </>
   )

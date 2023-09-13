@@ -1,10 +1,16 @@
+import { Vector3 } from 'three'
 import { Canvas } from '@react-three/fiber'
-import Scene from '@/components/Scene'
+import World from '@/components/World'
 
 function App() {
+  const camera = {
+    position: new Vector3(0, 1, 10),
+    fov: 80,
+  }
+
   return (
-    <Canvas shadows>
-      <Scene />
+    <Canvas shadows camera={camera}>
+      <World />
     </Canvas>
   )
 }
