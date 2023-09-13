@@ -1,10 +1,10 @@
 import { Canvas } from '@react-three/fiber'
-import Experience from '@/components/Experience'
+import Scene from '@/components/Scene'
 
 function App() {
   return (
-    <Canvas>
-      <Experience />
+    <Canvas shadows>
+      <Scene />
     </Canvas>
   )
 }
