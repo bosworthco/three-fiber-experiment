@@ -5,7 +5,12 @@ interface YourComponentNameProps {
 }
 
 const YourComponentName: React.FC<YourComponentNameProps> = () => {
-  return <div></div>
+  return (
+    <mesh>
+      <torusKnotGeometry />
+      <meshNormalMaterial />
+    </mesh>
+  )
 }
 
 export default YourComponentName
